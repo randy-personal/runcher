@@ -484,12 +484,12 @@ pub unsafe fn prepare_unit_multiplier(app_ui: &AppUI, game: &GameInfo, reserved_
                             }
                         }
 
-                        if is_single_entity {
-                            if let Some(bonus_hit_points) = bonus_hit_points_column {
-                                if let Some(DecodedData::I32(value)) = row.get_mut(bonus_hit_points) {
-                                    *value = (*value as f64 * unit_multiplier).round() as i32;
-                                }
-                            }
+                        //if is_single_entity {
+                        //    if let Some(bonus_hit_points) = bonus_hit_points_column {
+                        //        if let Some(DecodedData::I32(value)) = row.get_mut(bonus_hit_points) {
+                        //            *value = (*value as f64 * unit_multiplier).round() as i32;
+                        //        }
+                        //    }
                         }
                     }
                 }
