@@ -440,7 +440,7 @@ pub unsafe fn prepare_unit_multiplier(app_ui: &AppUI, game: &GameInfo, reserved_
             let key_column = data.definition().column_position_by_name("key");
             let num_mounts_column = data.definition().column_position_by_name("num_mounts");
             let rank_depth_column = data.definition().column_position_by_name("rank_depth");
-            let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
+            //let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
             let num_engines_column = data.definition().column_position_by_name("num_engines");
 
             for row in data.data_mut() {
@@ -753,7 +753,7 @@ pub unsafe fn prepare_universal_rebalancer(app_ui: &AppUI, game: &GameInfo, rese
                 let melee_attack_column = data.definition().column_position_by_name("melee_attack");
                 let melee_defence_column = data.definition().column_position_by_name("melee_defence");
                 let charge_bonus_column = data.definition().column_position_by_name("charge_bonus");
-                let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
+                //let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
                 let primary_ammo_column = data.definition().column_position_by_name("primary_ammo");
                 let secondary_ammo_column = data.definition().column_position_by_name("secondary_ammo");
                 let accuracy_column = data.definition().column_position_by_name("accuracy");
@@ -829,13 +829,13 @@ pub unsafe fn prepare_universal_rebalancer(app_ui: &AppUI, game: &GameInfo, rese
                                     }
                                 }
 
-                                if let Some(column) = bonus_hit_points_column {
-                                    if let Some(DecodedData::I32(base_value)) = row.get(column) {
-                                        if let Some(stat) = find_stat_in_table_i32(&land_units_vanilla, cmp.key(), "bonus_hit_points") {
-                                            cmp.bonus_hit_points = (stat, *base_value);
-                                        }
-                                    }
-                                }
+                                //if let Some(column) = bonus_hit_points_column {
+                                //    if let Some(DecodedData::I32(base_value)) = row.get(column) {
+                                //        if let Some(stat) = find_stat_in_table_i32(&land_units_vanilla, cmp.key(), "bonus_hit_points") {
+                                //            cmp.bonus_hit_points = (stat, *base_value);
+                                //        }
+                                //    }
+                                //}
 
                                 if let Some(column) = primary_ammo_column {
                                     if let Some(DecodedData::I32(base_value)) = row.get(column) {
@@ -1247,7 +1247,7 @@ pub unsafe fn prepare_universal_rebalancer(app_ui: &AppUI, game: &GameInfo, rese
                             let melee_attack_column = data.definition().column_position_by_name("melee_attack");
                             let melee_defence_column = data.definition().column_position_by_name("melee_defence");
                             let charge_bonus_column = data.definition().column_position_by_name("charge_bonus");
-                            let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
+                            //let bonus_hit_points_column = data.definition().column_position_by_name("bonus_hit_points");
                             let primary_ammo_column = data.definition().column_position_by_name("primary_ammo");
                             let secondary_ammo_column = data.definition().column_position_by_name("secondary_ammo");
                             let accuracy_column = data.definition().column_position_by_name("accuracy");
@@ -1312,13 +1312,13 @@ pub unsafe fn prepare_universal_rebalancer(app_ui: &AppUI, game: &GameInfo, rese
                                                                 }
                                                             }
                                                         }
-                                                        if let Some(column) = bonus_hit_points_column {
-                                                            if let Some(DecodedData::I32(ref mut value)) = row.get_mut(column) {
-                                                                if let Some(multiplier) = averaged_categories_stats.get(&(cul_cat.to_owned() + "bonus_hit_points")) {
-                                                                    *value = (*value as f32 * multiplier).round() as i32;
-                                                                }
-                                                            }
-                                                        }
+                                                        //if let Some(column) = bonus_hit_points_column {
+                                                        //    if let Some(DecodedData::I32(ref mut value)) = row.get_mut(column) {
+                                                        //        if let Some(multiplier) = averaged_categories_stats.get(&(cul_cat.to_owned() + "bonus_hit_points")) {
+                                                        //            *value = (*value as f32 * multiplier).round() as i32;
+                                                        //        }
+                                                        //    }
+                                                        //}
                                                         if let Some(column) = primary_ammo_column {
                                                             if let Some(DecodedData::I32(ref mut value)) = row.get_mut(column) {
                                                                 if let Some(multiplier) = averaged_categories_stats.get(&(cul_cat.to_owned() + "primary_ammo")) {
