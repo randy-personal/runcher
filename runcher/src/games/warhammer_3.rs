@@ -490,7 +490,7 @@ pub unsafe fn prepare_unit_multiplier(app_ui: &AppUI, game: &GameInfo, reserved_
                         //            *value = (*value as f64 * unit_multiplier).round() as i32;
                         //        }
                         //    }
-                        }
+                        //}
                     }
                 }
             }
